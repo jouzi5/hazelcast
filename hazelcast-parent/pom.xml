@@ -100,6 +100,7 @@
         <debezium.version>1.9.8.Final</debezium.version>
         <!-- When upgrading, consider if manually specified (to address dependency convergence) version of transitive dependency `org.checkerframework` should be upgraded -->
         <new.debezium.version>3.1.3.Final</new.debezium.version>
+        <!-- When upgrading, consider if manually specified (to address dependency convergence) version of transitive dependency `com.google.errorprone:error_prone_annotations` should be upgraded -->
         <grpc.version>1.80.0</grpc.version>
         <hadoop.version>3.4.3</hadoop.version>
         <jackson.version>3.1.2</jackson.version>
@@ -653,10 +654,15 @@
                 <!--  When updating archunit.version, check/remove Java version assumptions in ArchUnitTestSupport -->
                 <version>1.4.1</version>
             </dependency>
+            <!-- 
+                Addresses convergence between:
+                - `com.google.guava:guava`
+                - `io.grpc:grpc-stub` / `io.grpc:grpc-api`
+            -->
             <dependency>
                 <groupId>com.google.errorprone</groupId>
                 <artifactId>error_prone_annotations</artifactId>
-                <version>2.48.0</version>
+                <version>2.45.0</version>
             </dependency>
             <dependency>
                 <groupId>info.picocli</groupId>
@@ -697,6 +703,7 @@
 
             <!-- All of this is needed to upgrade GCS -->
             <!-- see https://hazelcast.atlassian.net/browse/HZ-4706 -->
+            <!-- When upgrading, consider if manually specified (to address dependency convergence) version of transitive dependency `com.google.errorprone:error_prone_annotations` should be upgraded -->
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>libraries-bom</artifactId>
