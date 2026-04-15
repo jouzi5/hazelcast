@@ -89,7 +89,7 @@
         <!-- Match parquet and avro version - parquet-avro depends on avro - https://mvnrepository.com/artifact/org.apache.parquet/parquet-avro -->
         <avro.version>1.11.5</avro.version>
         <!-- When upgrading, consider if manually specified (to address dependency convergence) version of transitive dependency `org.checkerframework:checker-qual` should be upgraded -->
-        <aws.sdk2.version>2.42.31</aws.sdk2.version>
+        <aws.sdk2.version>2.42.34</aws.sdk2.version>
         <calcite.version>1.35.0</calcite.version>
         <!--
         Calcite 1.35 dependency that has CVE
