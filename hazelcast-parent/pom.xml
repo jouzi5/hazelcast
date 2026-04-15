@@ -353,10 +353,6 @@
                         <artifactId>kerb-core</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.apache.kerby</groupId>
-                        <artifactId>kerb-simplekdc</artifactId>
-                    </exclusion>
-                    <exclusion>
                         <groupId>org.apache.curator</groupId>
                         <artifactId>curator-client</artifactId>
                     </exclusion>
@@ -394,16 +390,6 @@
                 <groupId>org.apache.parquet</groupId>
                 <artifactId>parquet-avro</artifactId>
                 <version>${parquet.version}</version>
-                <exclusions>
-                    <!--
-                    The following library is not required, it only contains annotations and doclets
-                    It also requires JDK11 since version 0.14
-                    -->
-                    <exclusion>
-                        <groupId>org.apache.yetus</groupId>
-                        <artifactId>audience-annotations</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <dependency>
