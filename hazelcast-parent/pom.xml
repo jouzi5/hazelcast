@@ -89,6 +89,8 @@
         <!-- Match parquet and avro version - parquet-avro depends on avro - https://mvnrepository.com/artifact/org.apache.parquet/parquet-avro -->
         <avro.version>1.11.5</avro.version>
         <!-- When upgrading, consider if manually specified (to address dependency convergence) version of transitive dependency `org.checkerframework:checker-qual` should be upgraded -->
+        <!-- When upgrading, check also if https://github.com/aws/aws-sdk-java-v2/issues/6863 was fixed
+          and if yes, then revert changes in KinesisSourcePSupplier from CTT-661. -->
         <aws.sdk2.version>2.42.34</aws.sdk2.version>
         <calcite.version>1.35.0</calcite.version>
         <!--
@@ -560,7 +562,7 @@
                 <version>${jline.version}</version>
                 <classifier>jdk8</classifier>
             </dependency>
-            <!-- 
+            <!--
                 Addresses convergence between:
                 - `org.apache.calcite`
                 - `com.google.cloud:google-cloud-storage` (transitively from `com.google.cloud.bigdataoss:gcs-connector`)
@@ -662,7 +664,7 @@
                 <!--  When updating archunit.version, check/remove Java version assumptions in ArchUnitTestSupport -->
                 <version>1.4.1</version>
             </dependency>
-            <!-- 
+            <!--
                 Addresses convergence between:
                 - `com.google.guava:guava`
                 - `io.grpc:grpc-stub` / `io.grpc:grpc-api`
